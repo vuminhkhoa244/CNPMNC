@@ -12,17 +12,19 @@ import vn.edu.hcmut.cse.adsoftweng.lab.service.StudentService;
 @RestController
 @RequestMapping("/api/students")
 public class StudentController {
-@Autowired
-private StudentService service;
-// 1. API Lay danh sach: GET http://localhost:8080/api/students
-@GetMapping
-public List<StudentEntity> getAllStudents() {
-return service.getAll();
-}
-// 2. API Lay chi tiet: GET http://localhost:8080/api/students/{id}
-@GetMapping("/{id}")
-public StudentEntity getStudentById(@PathVariable String id) {
-// Luu y: Can them method getById trong Service truoc
-return service.getById(id);
-}
+    @Autowired
+    private StudentService service;
+
+    // 1. API Lay danh sach: GET http://localhost:8080/api/students
+    @GetMapping
+    public List<StudentEntity> getAllStudents() {
+        return service.getAll();
+    }
+
+    // 2. API Lay chi tiet: GET http://localhost:8080/api/students/{id}
+    @GetMapping("/{id}")
+    public StudentEntity getStudentById(@PathVariable String id) {
+        // Luu y: Can them method getById trong Service truoc
+        return service.getById(id);
+    }
 }

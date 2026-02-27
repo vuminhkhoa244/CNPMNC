@@ -18,4 +18,16 @@ public class StudentService {
     public StudentEntity getById(String id) {
         return repository.findById(id).orElse(null);
     }
+
+    public List<StudentEntity> searchByName(String keyword) {
+        return repository.findByNameContainingIgnoreCase(keyword);
+    }
+
+    public void save(StudentEntity student) {
+        repository.save(student);
+    }
+
+    public void deleteById(String id) {
+        repository.deleteById(id);
+    }
 }

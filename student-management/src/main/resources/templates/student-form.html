@@ -1,0 +1,112 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title
+      th:text="${student.id == null or student.id == ''} ? 'Thêm Sinh Viên Mới' : 'Cập Nhật Sinh Viên'"
+    ></title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        max-width: 500px;
+        margin: auto;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[readonly] {
+        background-color: #e9ecef;
+        cursor: not-allowed;
+      }
+      .btn {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      .btn-success {
+        background-color: #28a745;
+        color: white;
+      }
+      .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      th:text="${student.id == null or student.id == ''} ? 'Thêm Sinh Viên Mới' : 'Cập Nhật Sinh Viên'"
+    ></h1>
+
+    <form th:action="@{/students/save}" th:object="${student}" method="post">
+      <div class="form-group">
+        <label for="id">MSSV (ID):</label>
+        <input
+          type="text"
+          id="id"
+          th:field="*{id}"
+          required
+          th:readonly="${student.id != null and student.id != ''}"
+          placeholder="Nhập mã số sinh viên..."
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Họ và Tên:</label>
+        <input
+          type="text"
+          id="name"
+          th:field="*{name}"
+          required
+          placeholder="Nhập họ tên..."
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          th:field="*{email}"
+          required
+          placeholder="abc@hcmut.edu.vn"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Tuổi:</label>
+        <input
+          type="number"
+          id="age"
+          th:field="*{age}"
+          required
+          min="17"
+          max="100"
+        />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Lưu Thông Tin</button>
+        <a th:href="@{/students}" class="btn btn-secondary">Hủy bỏ</a>
+      </div>
+    </form>
+  </body>
+</html>
