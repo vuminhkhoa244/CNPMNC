@@ -57,16 +57,16 @@ docker run -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:postgresql://ep-old-silenc
 
 5. Screenshot dự án
 ### 1. Trang Danh sách (List View)
-![Trang Danh Sách](image/list.png)
+![Trang Danh Sách](student-management/image/list.png)
 
 ### 2. Trang Chi tiết (Detail View)
-![Trang Chi Tiết](image/detail.png)
+![Trang Chi Tiết](student-management/image/detail.png)
 
 ### 3. Trang Thêm mới (Add Student)
-![Trang Thêm Mới](image/addt.png)
+![Trang Thêm Mới](student-management/image/addt.png)
 
 ### 4. Trang Chỉnh sửa (Edit Student)
-![Trang Chỉnh Sửa](image/edit.png)
+![Trang Chỉnh Sửa](student-management/image/edit.png)
 
 ### 5. Quản lý Database trên Neon
-![Database Neon](image/neon.png)
+![Database Neon](student-management/image/neon.png)
