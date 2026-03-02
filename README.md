@@ -63,7 +63,7 @@ docker run -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:postgresql://ep-old-silenc
 ![Trang Chi Tiết](student-management/image/detail.png)
 
 ### 3. Trang Thêm mới (Add Student)
-![Trang Thêm Mới](student-management/image/addt.png)
+![Trang Thêm Mới](student-management/image/add.png)
 
 ### 4. Trang Chỉnh sửa (Edit Student)
 ![Trang Chỉnh Sửa](student-management/image/edit.png)
